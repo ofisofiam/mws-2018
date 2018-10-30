@@ -1,0 +1,54 @@
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Map Box</title>
+        <meta charset="utf-8" />
+
+        <link rel="stylesheet" href="../project2/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+    </head>
+    <body>
+        <div class='map' id='mapid'></div>
+        <div class='image'>
+            <img src="../project2/images/TokyoInstituteOfTechnology.jpg">
+        </div>
+        <div class='review'>
+            <h2>Tokyo Institute of Technology</h2> 
+            <h3>A national research university located in Greater Tokyo Area, Japan. Tokyo Tech is the largest institution for higher education in Japan dedicated to science and technology, and is generally considered to be one of the most prestigious universities in Japan.
+                Tokyo Tech's main campus is located at Ōokayama on the boundary of Meguro and Ota, with its main entrance facing the Ōokayama Station. Other campuses are located in Suzukakedai and Tamachi. Tokyo Tech is organised into 6 schools, within which there are over 40 departments and research centres</h3>
+        </div>
+        <div id="mapid" style="width: 600px; height: 400px;"></div>
+        <script>
+            var mymap = L.map('mapid').setView([35.605156, 139.683528], 13);
+        
+            L.tileLayer(
+                'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib2Zpc29maWFtIiwiYSI6ImNqbWtxbnkyczAwYzgza29rb24weHZiZHMifQ.LmDqJST36YXFyXpTqPrFSw', {
+                    maxZoom: 18,
+                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    id: 'mapbox.streets'
+                }).addTo(mymap);
+        
+            L.marker([35.605156, 139.683528]).addTo(mymap)
+               .bindPopup("<b>Hello</b><br/> Tokyo Institute of Technology").openPopup();
+        
+            L.circle([35.605156, 139.683528], 500, {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5
+            }).addTo(mymap).bindPopup("I am a circle.");
+        
+             L.polygon([
+                [51.509, -0.08],
+                [51.503, -0.06],
+                [51.51, -0.047]
+            ]).addTo(mymap).bindPopup("I am a polygon.");
+        
+            var popup = L.popup();
+        </script>
+    </body>
+</html>

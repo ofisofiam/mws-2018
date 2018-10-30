@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add 2 Numbers</title>
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto 80px 80px 80px auto;
+        grid-gap: 4px;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        }
+    .content {
+        background: #FFEF80;
+        grid-column: 1/7;
+        grid-row: 2/6;
+        }
+    .menu {
+        background: #4DAFC6;
+        grid-column-start: 1;
+        grid-column-end: 8;
+        display: flex;
+        line-height: 45px;
+        }
+    .footer {
+        background: #2B8CAF;
+        grid-column: 1/8;
+        grid-row: 6/6; 
+        }
+    .caption, .footer {
+        font-size: 1em;
+        color: #FEF6E1;
+        padding: 0 10px;
+        }
+    a, a:hover, a:focus {
+        color: #B75E4C;
+        text-decoration: none;
+        }
+    @media (max-width: 480px) {
+        .sidebar, .content {
+            grid-column: 1/8;
+        }
+        .footer{
+            grid-row: auto;
+        }
+    }
+    input {
+        font-size: large;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+        <!-- <img class="logo" type="image/png" src="../public/images/pict (4).png"> -->
+            <div class="caption">
+                Add 2 Numbers
+            </div>
+        </div>
+        <div class="content">
+            <input type="text" size="5" placeholder="0" />
+            +
+            <input type="text" size="5" placeholder="0" />
+
+            <button> = </button>
+            <input type="text" size="5" readonly />
+        </div>
+        <div class="footer">Ofi Sofia Marwah</div>
+    </div>
+<script src="add2numbers.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Mobile Web Specialist</title>
+        
+        <meta name="theme-color" content="#4DAFC6">
+        <link rel="manifest" href="manifest.json">
+		<link rel="shortcut icon" type="image/png" href="https://banner2.kisspng.com/20180128/zqw/kisspng-rocket-spacecraft-outer-space-red-spaceship-5a6e21fa036112.1914756015171670980139.jpg">
+        <!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: auto 80px 80px 80px auto;
+            grid-gap: 4px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            }
+        .menu {
+            background: #4DAFC6;
+            grid-column-start: 1;
+            grid-column-end: 7;
+            display: flex;
+            line-height: 45px;
+            }
+        .sidebar {
+            background: #F2FFDE;
+            grid-row-start: 2;
+            grid-row-end: 6;
+            grid-column-end: 1/2;
+            }
+        .content {
+            background: #FFEF80;
+            grid-column: 2/7;
+            }
+        .footer {
+            background: #2B8CAF;
+            grid-column: 1/6;
+            grid-row: 6/6; 
+            }
+        .sidebar, .content {
+            padding: 10px;
+            border-radius: 8px;
+            font-family: "Georgia";
+            font-size: 1em;
+            letter-spacing: 1px;
+            color: #B75E4C;
+            }
+        .menu, .footer {
+            padding: 10px;
+            border-radius: 8px;
+            font-family: "Georgia";
+            font-size: 1em;
+            letter-spacing: 1px;
+            color: #FEF6E1;
+            }
+        /* .logo {
+            max-width: 35px;
+            max-height: 35px;
+            border-radius: 4px; 
+        } */
+        .caption {
+            font-size: 1em;
+            color: #FEF6E1;
+            padding: 0 10px;
+        }
+        .photo-profile {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 80%;
+            /* vertical-align: middle; */
+        }
+        a, a:hover, a:focus {
+            color: #B75E4C;
+            text-decoration: none;
+            }
+        @media (max-width: 480px) {
+            .sidebar, .content {
+                grid-column: 1/8;
+            }
+            .footer{
+                grid-row: auto;
+            }
+        }
+    </style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="menu">
+				<!-- <img class="logo" type="image/png" src="../public/images/pict (4).png"> -->
+				<div class="caption">
+					Menu
+				</div>
+			</div>
+			
+			<div class="sidebar">
+				<img class="photo-profile" src="https://lh3.googleusercontent.com/-ovotv1sp5C4/Wwq9TyuLLJI/AAAAAAAAByA/DgDlAqFuVcMUte7aYF9kD0wr8wWYZNHKQCEwYBhgL/w140-h140-p/IMG_20180521_113858_652.jpg" alt="foto ofi">
+            </div>
+			
+			<div class="content">
+				<a href="project1/add2numbers.html"> Project 1 <br> Calculator </br> </a>
+			</div>
+			
+			<div class="content">
+				<a href="project2/">Project 2 <br> Special Location With Map Box </br>
+				</a>
+			</div>
+			
+			<div class="content">
+                <a href="project3/"> Project 3 <br> Restaurant Review </br>
+                </a>
+            </div>
+
+            <div class="content">
+                <a href="final/">Final Project <br> Universities In Japan</br> 
+                </a>
+            </div>
+			
+			<div class="footer">Ofi Sofia Marwah</div>
+		</div>
+    </body>
+    <script>
+        if(navigator.serviceWorker){
+            navigator.serviceWorker.register('sw.js').then(function() {
+                console.log("Service Worker Berhasil");
+            }).catch(function(error) {
+                console.log("Service Worker Gagal",error);
+            });
+        }
+    </script>
+</html>	
